@@ -1,0 +1,14 @@
+﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+
+.circle {
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    background: yellow;
+    border: 2px solid gray;
+    display: inline-block;
+}
+
+.answer {
+    display: inline-block;
+}
