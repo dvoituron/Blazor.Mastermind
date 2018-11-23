@@ -1,8 +1,8 @@
+using System;
 using Microsoft.AspNetCore.Blazor.Components;
 using Microsoft.AspNetCore.Blazor.Services;
-using System;
 
-namespace Blazor.Mastermind.Pages
+namespace Blazor.Mastermind.Client.Pages
 {
     public class GamePageModel : BlazorComponent
     {
@@ -18,9 +18,9 @@ namespace Blazor.Mastermind.Pages
 
             if (won)
             {
-                Game.JsInterop.Alert("You win!");
-                UriHelper.NavigateTo("/winner");
+                UriHelper.NavigateTo("/WinnerPage");
             }
+
         }
     }
 }

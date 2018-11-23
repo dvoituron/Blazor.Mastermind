@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Blazor.Hosting;
 
-namespace Blazor.Mastermind
+namespace Blazor.Mastermind.Client
 {
     public class Program
     {

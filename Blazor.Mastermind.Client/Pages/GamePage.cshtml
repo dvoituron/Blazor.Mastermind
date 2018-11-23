@@ -1,0 +1,15 @@
+﻿@page "/"
+@inherits GamePageModel
+
+<h1>MasterMind</h1>
+
+@*<GameRow WithColors="@Engine.ComputerChoice" />*@
+
+<br />
+
+@foreach (var row in Engine.Rows)
+{
+    <GameRow WithColors="@row" />
+}
+
+<button class="btn btn-primary large" onclick="@Check">Check</button>

@@ -1,4 +1,8 @@
-﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+﻿@import url("open-iconic/font/css/open-iconic-bootstrap.min.css");
+
+body {
+    margin: 10px;
+}
 
 .circle {
     border-radius: 50%;
@@ -11,4 +15,8 @@
 
 .answer {
     display: inline-block;
+}
+
+.large {
+    width: 300px;
 }

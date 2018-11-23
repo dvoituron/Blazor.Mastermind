@@ -15,14 +15,16 @@ namespace Blazor.Mastermind.Game
             Start();
         }
 
-        public Row ComputerChoice { get; set; } = new Row();
+        public Row ComputerChoice { get; set; } = new Row() { IsComputerChoice = true };
 
         public List<Row> Rows { get; set; } = new List<Row>();
 
+        public bool HasWon { get; set; }
+
         public void Start()
         {
-            //var palette = RandomizedPalette();
-            var palette = COLORS_PALETTE;
+            var palette = RandomizedPalette();
+            //var palette = COLORS_PALETTE;
             for (int i = 0; i < 4; i++)
             {
                 ComputerChoice.Colors[i] = palette[i];
@@ -44,10 +46,12 @@ namespace Blazor.Mastermind.Game
 
             if (userRow.Goods == userColors.Length)
             {
+                HasWon = true;
                 return true;
             }
             else
             {
+                HasWon = false;
                 Rows.Add(new Row());
                 return false;
             }

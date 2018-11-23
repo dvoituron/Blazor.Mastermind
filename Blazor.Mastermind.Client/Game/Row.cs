@@ -15,10 +15,14 @@ namespace Blazor.Mastermind.Game
 
         public int Bads { get; set; }
 
+        public bool IsComputerChoice { get; set; }
+
         public bool IsChecked { get; set; }
 
         public void SetNextColor(int index)
         {
+            if (IsChecked || IsComputerChoice) return;
+
             // Current palette index
             int currentPaletteIndex = CurrentPaletteIndex(index);
 

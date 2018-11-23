@@ -1,0 +1,17 @@
+﻿@page "/Row"
+@inherits GameRowModel
+
+<div>
+    <div class="circle" style="background: @Row.Colors[0]" onclick="@((e) => Ball_Click(0))" />
+    <div class="circle" style="background: @Row.Colors[1]" onclick="@((e) => Ball_Click(1))" />
+    <div class="circle" style="background: @Row.Colors[2]" onclick="@((e) => Ball_Click(2))" />
+    <div class="circle" style="background: @Row.Colors[3]" onclick="@((e) => Ball_Click(3))" />
+
+    @if (Row.IsChecked)
+    {
+        <div class="answer">
+            @Row.Goods bien placées. <br />
+            @Row.Bads mal placées.
+        </div>
+    }
+</div>
