@@ -5,14 +5,16 @@ namespace Blazor.Mastermind.Game
 {
     public class Row
     {
-        public Row()
+        public Row() : this(noColors: false)
         {
-            Colors = new[] { Engine.NO_COLOR, Engine.NO_COLOR, Engine.NO_COLOR, Engine.NO_COLOR };
         }
 
-        public Row(bool defaultColors)
+        public Row(bool noColors)
         {
-            Colors = Engine.COLORS_PALETTE.Take(4).ToArray();
+            if (noColors)
+                Colors = new[] { Engine.NO_COLOR, Engine.NO_COLOR, Engine.NO_COLOR, Engine.NO_COLOR };
+            else
+                Colors = Engine.COLORS_PALETTE.Take(4).ToArray();
         }
 
         public string[] Colors { get; set; }
@@ -33,8 +35,8 @@ namespace Blazor.Mastermind.Game
             int currentPaletteIndex = CurrentPaletteIndex(index);
 
             // Next palette index
-            currentPaletteIndex = currentPaletteIndex >= Engine.COLORS_PALETTE.Length - 1 
-                                  ? 0 
+            currentPaletteIndex = currentPaletteIndex >= Engine.COLORS_PALETTE.Length - 1
+                                  ? 0
                                   : currentPaletteIndex + 1;
 
             // Sets the new color

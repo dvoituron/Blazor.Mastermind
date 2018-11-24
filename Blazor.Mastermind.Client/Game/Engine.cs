@@ -15,7 +15,7 @@ namespace Blazor.Mastermind.Game
             Start();
         }
 
-        public Row ComputerChoice { get; set; } = new Row() { IsComputerChoice = true };
+        public Row ComputerChoice { get; set; } = new Row(noColors: true) { IsComputerChoice = true };
 
         public List<Row> Rows { get; set; } = new List<Row>();
 
@@ -31,7 +31,7 @@ namespace Blazor.Mastermind.Game
             }
 
             Rows.Clear();
-            Rows.Add(new Row());
+            Rows.Add(new Row(noColors: true));
         }
 
         public bool Check()
@@ -52,7 +52,7 @@ namespace Blazor.Mastermind.Game
             else
             {
                 HasWon = false;
-                Rows.Add(new Row());
+                Rows.Add(new Row(noColors: true));
                 return false;
             }
         }

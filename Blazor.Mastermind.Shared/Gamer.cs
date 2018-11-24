@@ -8,6 +8,6 @@ namespace Blazor.Mastermind.Shared
         public string LastName { get; set; }
         public string Email { get; set; }
         public DateTime Recorded { get; set; }
-        //public int NumberOfRows { get; set; }
+        public int NumberOfRows { get; set; }
     }
 }
