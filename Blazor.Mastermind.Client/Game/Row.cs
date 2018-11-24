@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace Blazor.Mastermind.Game
 {
@@ -7,6 +8,11 @@ namespace Blazor.Mastermind.Game
         public Row()
         {
             Colors = new[] { Engine.NO_COLOR, Engine.NO_COLOR, Engine.NO_COLOR, Engine.NO_COLOR };
+        }
+
+        public Row(bool defaultColors)
+        {
+            Colors = Engine.COLORS_PALETTE.Take(4).ToArray();
         }
 
         public string[] Colors { get; set; }
