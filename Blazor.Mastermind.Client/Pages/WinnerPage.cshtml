@@ -1,0 +1,30 @@
+﻿@page "/WinnerPage"
+@inherits WinnerPageModel
+
+@if (Engine.HasWon)
+{
+    <h1>You win</h1>
+
+    <p>Please, enter your contact details...</p>
+
+    <div class="form-group">
+        <label>First name:</label>
+        <input type="text" class="form-control" bind="@Gamer.FirstName" />
+    </div>
+
+    <div class="form-group">
+        <label>Last name:</label>
+        <input type="text" class="form-control" bind="@Gamer.LastName" />
+    </div>
+
+    <div class="form-group">
+        <label>EMail:</label>
+        <input type="email" class="form-control" bind="@Gamer.Email" />
+    </div>
+
+    <button class="btn btn-primary large" onclick="@Send">Send</button>
+}
+else
+{
+    <p>First, you have to win.</p>
+}
